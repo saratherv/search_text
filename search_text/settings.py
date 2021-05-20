@@ -112,3 +112,8 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+######### Other Configuration Fields  ######
+folder_path = "/borneo"
+access_token = "a_gMPTmoH3sAAAAAAAAAAQxAv2C6fzZaMxDOPlo5jKop6qndL1nFFwWzV1h9q3s1"
