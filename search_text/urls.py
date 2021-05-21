@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import url
+from search_text.views import SearchTextView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    url(r'^api/v1/searchText/$', SearchTextView.as_view()),
 ]

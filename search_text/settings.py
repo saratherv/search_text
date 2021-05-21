@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'rest_framework',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
@@ -115,5 +118,15 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 ######### Other Configuration Fields  ######
-folder_path = "/borneo"
-access_token = "a_gMPTmoH3sAAAAAAAAAAQxAv2C6fzZaMxDOPlo5jKop6qndL1nFFwWzV1h9q3s1"
+# folder_path = "/borneo"
+# access_token = "a_gMPTmoH3sAAAAAAAAAAQxAv2C6fzZaMxDOPlo5jKop6qndL1nFFwWzV1h9q3s1"
+
+
+### S3 Credentials
+AWS_ACCESS_KEY_ID = "AKIA3JRMMCUFSANFUWH4"
+AWS_SECRET_ACCESS_KEY = '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'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_STORAGE_BUCKET_NAME = 'borneodatabucket'
+AWS_S3_REGION_NAME = 'ap-southeast-1'
+
+
