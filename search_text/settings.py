@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +26,7 @@ SECRET_KEY = 'django-insecure-ttn7=(2=c97(j+gmdwy-#4$tq(p5kd2zg-6%kw26=1=3$dm27g
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -37,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'rest_framework',
+    'templatetags.filter'
 ]
 
 MIDDLEWARE = [
@@ -51,11 +55,14 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'search_text.urls'
 
+SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
+
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
+        'DIRS': [os.path.join(SETTINGS_PATH, 'templates')],
+        'APP_DIRS': False,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -63,6 +70,9 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+            'libraries':{
+                'filter': 'templatetags.filter',
+            }
         },
     },
 ]
@@ -112,3 +122,19 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+######### Other Configuration Fields  ######
+# folder_path = "/borneo"
+# access_token = "a_gMPTmoH3sAAAAAAAAAAQxAv2C6fzZaMxDOPlo5jKop6qndL1nFFwWzV1h9q3s1"
+
+
+### S3 Credentials
+AWS_ACCESS_KEY_ID = "AKIA3JRMMCUFSANFUWH4"
+AWS_SECRET_ACCESS_KEY = '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'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_STORAGE_BUCKET_NAME = 'borneodatabucket'
+AWS_S3_REGION_NAME = 'ap-southeast-1'
+AWS_S3_PUBLIC_URL = "https://borneodatabucket.s3-ap-southeast-1.amazonaws.com/"
+
+

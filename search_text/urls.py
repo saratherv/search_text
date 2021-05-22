@@ -15,7 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import url
+from search_text.views import ParseTextView, SearchTextView, HomeView
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    url(r'^api/v1/parseText/$', ParseTextView.as_view()),
+    url(r'^api/v1/searchText/$', SearchTextView.as_view()),
+    url(r'^$', HomeView.as_view()),
+    url(r'^searchText/$', HomeView.as_view()),
+
 ]
