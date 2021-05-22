@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    command: bash -c "python3 manage.py runserver 0.0.0.0:8000"
+    container_name: search_text
+    volumes:
+      - .:/search_text
+    ports:
+      - "8000:8000"

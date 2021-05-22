@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-ttn7=(2=c97(j+gmdwy-#4$tq(p5kd2zg-6%kw26=1=3$dm27g
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'rest_framework',
-    'drf_yasg',
     'templatetags.filter'
 ]
 
