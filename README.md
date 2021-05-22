@@ -17,6 +17,6 @@ This application fetches PDF files from aws s3 bucket, extracts text from the fi
 # SETUP & EXECUTION
 - create virtal environment using command python3 -m venv environment_name
 - activate virtual environment source environment_name/bin/activate
-- clone the repository https://github.com/saratherv/search_text.git
+- clone the repository git clone https://github.com/saratherv/search_text.git
 - get to root   cd search_text
 - run sudo docker-compose up --build, This will start development server on http://0.0.0.0:8000/
