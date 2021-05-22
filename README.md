@@ -1,5 +1,5 @@
 # search_text
-
+- Product Requirements Document link : https://docs.google.com/document/d/1HX9UhV4rwTB22ECrxfBrKW8sNkYcN0P-WsWhOUKp758/edit?usp=sharing
 
 This repository contains a simple Django app, **Search Text in the files over cloud**
 
@@ -20,3 +20,5 @@ This application fetches PDF files from aws s3 bucket, extracts text from the fi
 - clone the repository git clone https://github.com/saratherv/search_text.git
 - get to root   cd search_text
 - run sudo docker-compose up --build, This will start development server on http://0.0.0.0:8000/
+
+
