@@ -15,6 +15,7 @@ def connect_elasticsearch():
 
 def insertDocuments(documents):
     es = connect_elasticsearch()
+    es.indices.delete(index='s3_data', ignore=[400, 404])
     if es == None:
         return {"success" : False, "error" : "unable to connect to elastic search"}
     try:

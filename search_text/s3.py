@@ -12,7 +12,7 @@ def fetchFromS3():
         obj = s3.Object(AWS_STORAGE_BUCKET_NAME, item.key)
         fs = obj.get()['Body'].read()
         pdfFile = PdfFileReader(BytesIO(fs))
-        file_json = {"pdfFile" : pdfFile, "url" : AWS_S3_PUBLIC_URL + item.key}
+        file_json = {"pdfFile" : pdfFile, "url" : AWS_S3_PUBLIC_URL + item.key, "file_name" : item.key}
         pdf_files.append(file_json)
     
     return pdf_files
