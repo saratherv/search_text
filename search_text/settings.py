@@ -128,5 +128,6 @@ AWS_SECRET_ACCESS_KEY = 'z2ZNPqhBI1qGIIKQ2LCzGFI1P5+phDTNMWmg6VfF'
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 AWS_STORAGE_BUCKET_NAME = 'borneodatabucket'
 AWS_S3_REGION_NAME = 'ap-southeast-1'
+AWS_S3_PUBLIC_URL = "https://borneodatabucket.s3-ap-southeast-1.amazonaws.com/"
 
 
